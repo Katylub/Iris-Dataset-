@@ -34,3 +34,12 @@ https://archive.ics.uci.edu/ml/datasets/iris
 
 https://datahub.io/machine-learning/iris#readme
 
+## Iris Dataset
+As mentioned, the dataset contains a set of 150 records under five attributes - petal length, petal width, sepal length, sepal width and species.
+
+Each colum looks like this: (picture)
+Average Sepal length -
+Average Sepal width
+Average Petal length
+Average Petal width
+Standard deviation -
