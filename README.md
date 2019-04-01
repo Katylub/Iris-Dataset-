@@ -18,14 +18,14 @@ The data set consists of 50 samples from each of three species of Iris (Iris set
 
 (picture flowers)
 
-For each example were measured four feature:  
+For each example were measured four features:  
 
 1. sepal length in cm
 2. sepal width in cm
 3. petal length in cm
 4. petal width in cm
-
-Based on the combination of these four features, ** Fisher developed a linear discriminant model to distinguish the species from each other. **
+ (add picture)
+Based on the combination of these four features and the species ** Fisher developed a linear discriminant model to distinguish the species from each other. **
 
 
 
@@ -34,12 +34,34 @@ https://archive.ics.uci.edu/ml/datasets/iris
 
 https://datahub.io/machine-learning/iris#readme
 
-## Iris Dataset
+## Iris Data Set: 
+
+In order to work with the documents we can:
+
+1. Import Data
+2. Load the dataset from a CSV file: f= pd.read_csv('IrisDataset.csv')
+3. Test if the document has the right data: (f.head())
+We can see each column looks like this: (Inclde picture - Datset Columns)
+4. Check Dimension Dataset: (f.shape) 
 As mentioned, the dataset contains a set of 150 records under five attributes - petal length, petal width, sepal length, sepal width and species.
+5. Summary of each attribute : dataset.describe() (Add picture Attribute Summary)
+
+
+
+You can evaluate what is in the document:
+
+1. Allow to see the for quickly testing if your object has the right type of data in it.
 
 Each colum looks like this: (picture)
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+https://www.kaggle.com/gopaltirupur/iris-data-analysis-and-machine-learning-python
 Average Sepal length -
 Average Sepal width
 Average Petal length
 Average Petal width
 Standard deviation -
+
+Data Analysis
+- Dimension of Dataset:
+1. Load the data
+2. 
