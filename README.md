@@ -32,24 +32,39 @@ For each example were measured four features:
 
 In order to work with the documents we can:
 
-1. [Import Data](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv)
+1. Import Dataset CSV file that you can find in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv)
 
-2. Load the dataset from a CSV file: f= pd.read_csv('IrisDataset.csv')
+2. Load the dataset from the CSV file: 
 
+```python
+f = pd.read_csv('IrisDataset.csv')
+```
 
-3. Test if the document has the right data: (f.head())
+3. Test if the document has the right data: 
+
+```python
+print (f.head())
+```
+
  ![We can see each column looks like this:](https://github.com/Katylub/Iris-Dataset-/blob/master/Dataset%20Columns.JPG)
 
 
-4. Check Dimension Dataset: (f.shape)
+4. Check Dimension Dataset: 
+```python
+print("The shape of dataset is:", (f.shape))
+```
+
 ![Shape Data set](https://github.com/Katylub/Iris-Dataset-/blob/master/Shape%20of%20dataset.JPG)
 
 As mentioned, the dataset contains a set of 150 records under five attributes - petal length, petal width, sepal length, sepal width and species.
 
-5. Summary of each attribute : dataset.describe() 
+5. Summary of each attribute : 
+
+```python
+print (f.describe())
+```
+
 ![Attribute Summary](https://github.com/Katylub/Iris-Dataset-/blob/master/Attribute%20Summary.JPG)
-
-
 
 
 You can evaluate what is in the document:
