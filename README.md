@@ -30,17 +30,32 @@ For each example were measured four features:
 
 ## Iris Data Set: 
 
-In order to work with the documents we can:
+Process and data by steps:
 
-1. Import Dataset CSV file that you can find in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv)
+1. Import libraries 
 
-2. Load the dataset from the CSV file: 
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+2. Load the dataset from the CSV file that you can see in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv): 
 
 ```python
 f = pd.read_csv('IrisDataset.csv')
 ```
 
-3. Test if the document has the right data: 
+3. Check Dimension Dataset: As mentioned, the dataset contains a set of 150 records under five attributes
+
+```python
+print("The shape of dataset is:", (f.shape))
+```
+
+![Shape Data set](https://github.com/Katylub/Iris-Dataset-/blob/master/Shape%20of%20dataset.JPG)
+
+
+4. Test if the document has the right data: We can see how the data is presented and the attribues - petal length, petal width, sepal length, sepal width and species.
 
 ```python
 print (f.head())
@@ -49,16 +64,7 @@ print (f.head())
  ![We can see each column looks like this:](https://github.com/Katylub/Iris-Dataset-/blob/master/Dataset%20Columns.JPG)
 
 
-4. Check Dimension Dataset: 
-```python
-print("The shape of dataset is:", (f.shape))
-```
-
-![Shape Data set](https://github.com/Katylub/Iris-Dataset-/blob/master/Shape%20of%20dataset.JPG)
-
-As mentioned, the dataset contains a set of 150 records under five attributes - petal length, petal width, sepal length, sepal width and species.
-
-5. Summary of each attribute : 
+5. Summary of each attribute : We can see the count, min, max, standard and percentiles. Also that all the values has a similar range between 0 and 8.
 
 ```python
 print (f.describe())
@@ -66,23 +72,55 @@ print (f.describe())
 
 ![Attribute Summary](https://github.com/Katylub/Iris-Dataset-/blob/master/Attribute%20Summary.JPG)
 
+6. Species Distribution: We can see that each specie has the same number of instances (50 or 33% of the dataset) and all of them integer.
 
-You can evaluate what is in the document:
+```python
+print(f.groupby('species').size())
+```
 
-1. Allow to see the for quickly testing if your object has the right type of data in it.
+![Species](https://github.com/Katylub/Iris-Dataset-/blob/master/Species.JPG)
 
-Each colum looks like this: (picture)
-https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
-https://www.kaggle.com/gopaltirupur/iris-data-analysis-and-machine-learning-python
-Average Sepal length -
-Average Sepal width
-Average Petal length
-Average Petal width
-Standard deviation -
+7. Plot each individual variable: Gives us a much clearer idea of the distribution of the attributes
 
+```python
+f.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+plt.show()
+```
+
+![Plot Individual Variable](https://github.com/Katylub/Iris-Dataset-/blob/master/Plot%20Individual%20variable.png)
+
+7. Histogram of each individual variable
+
+```python
+f.hist()
+plt.show()
+```
+
+![Histogram](https://github.com/Katylub/Iris-Dataset-/blob/master/Histogram.png)
+
+8. Boxplot: We can compare distribution of the attributes by species 
+
+```python
+f.boxplot(by='species')
+plt.show()
+```
+
+![Boxplot](https://github.com/Katylub/Iris-Dataset-/blob/master/Boxplot%20by%20species.png)
+
+9. Scatter Matrix: we can look at the interactions between the variables
+
+```python
+pd.plotting.scatter_matrix(f)
+plt.show()
+```
+
+![Scatter](https://github.com/Katylub/Iris-Dataset-/blob/master/Scatter%20matrix.png)
 
 
 References:
+
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+https://www.kaggle.com/gopaltirupur/iris-data-analysis-and-machine-learning-python
 
 
 About Ronald Fisher:
@@ -92,9 +130,6 @@ About Iris Dataset
 https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
 https://en.wikipedia.org/wiki/Iris_flower_data_set
 https://study.com/academy/lesson/sir-ronald-fisher-biography-contributions-to-statistics.html
-
 https://archive.ics.uci.edu/ml/datasets/iris
-
-
 https://datahub.io/machine-learning/iris#readme
 https://matematics.wordpress.com/2018/05/23/sir-ronald-aylmer-fisher/
