@@ -30,17 +30,31 @@ For each example were measured four features:
 
 ## Iris Data Set: 
 
-In order to work with the documents we can:
+Taking a look at the data: 
 
-1. Import Dataset CSV file that you can find in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv)
+1. Import libraries 
 
-2. Load the dataset from the CSV file: 
+```python
+import numpy as np
+import pandas as pd
+```
+
+2. Load the dataset from the CSV file that you can see in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv): 
 
 ```python
 f = pd.read_csv('IrisDataset.csv')
 ```
 
-3. Test if the document has the right data: 
+3. Check Dimension Dataset: As mentioned, the dataset contains a set of 150 records under five attributes
+
+```python
+print("The shape of dataset is:", (f.shape))
+```
+
+![Shape Data set](https://github.com/Katylub/Iris-Dataset-/blob/master/Shape%20of%20dataset.JPG)
+
+
+4. Test if the document has the right data: We can see how the data is presented and the attribues - petal length, petal width, sepal length, sepal width and species.
 
 ```python
 print (f.head())
@@ -49,16 +63,7 @@ print (f.head())
  ![We can see each column looks like this:](https://github.com/Katylub/Iris-Dataset-/blob/master/Dataset%20Columns.JPG)
 
 
-4. Check Dimension Dataset: 
-```python
-print("The shape of dataset is:", (f.shape))
-```
-
-![Shape Data set](https://github.com/Katylub/Iris-Dataset-/blob/master/Shape%20of%20dataset.JPG)
-
-As mentioned, the dataset contains a set of 150 records under five attributes - petal length, petal width, sepal length, sepal width and species.
-
-5. Summary of each attribute : 
+5. Summary of each attribute : We can see the count, min, max and include percentiles. Also that all the values has a similar range between 0 and 8.
 
 ```python
 print (f.describe())
@@ -66,6 +71,13 @@ print (f.describe())
 
 ![Attribute Summary](https://github.com/Katylub/Iris-Dataset-/blob/master/Attribute%20Summary.JPG)
 
+6. Species Distribution: We can see that each specie has the same number of instances (50 or 33% of the dataset).
+
+```python
+print(f.groupby('species').size())
+```
+
+![Species](https://github.com/Katylub/Iris-Dataset-/blob/master/Species.JPG)
 
 You can evaluate what is in the document:
 
