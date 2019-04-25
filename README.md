@@ -33,7 +33,7 @@ For each example were measured four features:
 Please see [here](https://github.com/Katylub/Iris-Dataset-/blob/master/Iris.py) the Python code used for this research
 
 ## Import libraries
-The libraries will help to analyse the data in a more efficient way.  
+The libraries will help to analyse the data in a more efficient way
 
 ```python
 import numpy as np
@@ -42,7 +42,7 @@ import matplotlib.pyplot as plt
 ```
 
 ## Load the dataset
-The data can be loaded from a CSV file that you can see in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv): 
+The data can be loaded from a CSV file that you can see in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv)
 
 ```python
 f = pd.read_csv('IrisDataset.csv')
@@ -59,7 +59,7 @@ print("The shape of dataset is:", (f.shape))
 
 
 ## Evaluate the data
-We can see how the attributes are presented by petal length, petal width, sepal length, sepal width and species.
+We can see how the attributes are presented by petal length, petal width, sepal length, sepal width and species
 
 ```python
 print (f.head())
@@ -69,7 +69,7 @@ print (f.head())
 
 
 ## Summary of each attribute 
-We can see the count, min, max, standard and percentiles. Also that all the values has a similar range between 0 and 8.
+We can see the count, min, max, standard and percentiles. Also that all the values has a similar range between 0 and 8
 
 ```python
 print (f.describe())
@@ -78,7 +78,7 @@ print (f.describe())
 ![Attribute Summary](https://github.com/Katylub/Iris-Dataset-/blob/master/Attribute%20Summary.JPG)
 
 ## Species Distribution
-We can see that each specie has the same number of instances (50 or 33% of the dataset) and all of them integer.
+We can see that each specie has the same number of instances (50 or 33% of the dataset) and all of them integer
 
 ```python
 print(f.groupby('species').size())
