@@ -171,20 +171,18 @@ print(iris.target_names[knn.predict([[3, 5, 4, 2]])])
 
 In this case the output will be Virginica
 
-## Plot 2D views of the iris dataset
-we can visualize two of the dimensions at a time using a scatter plot, in this case we can visualize that Iris Setosa flower is easier to separate from Versicolor and Virginica
+Plot 2D views of the iris dataset
 
-```python
-from sklearn import neighbors, datasets
-iris = datasets.load_iris()
-X, y = iris.data, iris.target
-knn = neighbors.KNeighborsClassifier(n_neighbors=1)
-knn.fit(X, y)
-# What kind of iris has 3cm x 5cm sepal and 4cm x 2cm petal?
-print(iris.target_names[knn.predict([[3, 5, 4, 2]])])
-```
 ![Plot 2D](https://github.com/Katylub/Iris-Dataset-/blob/master/Plot%202D.png)
 
+## Summary
+The Iris Dataset is the ideal dataset to start projects with data analysis and machine learning, in this project we identified all the attributes as numeric, so we sould work on how to load the data and the libraries we need to import. 
+
+The size of the document allow us to work with all the data and fit the information in the memory. We could observe the attibutes has the same scale and units, so the data doesn't require special transformation.
+
+The graphics demostrated that Iris Setosa flower is easier to separate from Versicolor and Virginica and we are allow to predict the type of flower with high level of accuracy. 
+
+Above all we could see the different information we can gatter from data to understand it and predict information based in what we gather.
 
 ## References:
 
