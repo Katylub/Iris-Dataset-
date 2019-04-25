@@ -30,7 +30,6 @@ For each example were measured four features:
 
 ## Iris Data Set: 
 
-Summary of the steps to evaluate the information using Python, made sure you have the program downloaded. 
 Please see [here](https://github.com/Katylub/Iris-Dataset-/blob/master/Iris.py) the Python code used for this research
 
 ## Import libraries
