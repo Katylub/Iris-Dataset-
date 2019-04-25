@@ -33,7 +33,7 @@ For each example were measured four features:
 Summary of the steps to evaluate the information using Python, made sure you have the program downloaded. 
 Please see [here](https://github.com/Katylub/Iris-Dataset-/blob/master/Iris.py) the Python code used for this research
 
-## 1. Import libraries
+## Import libraries
 The libraries will help to analyse the data in a more efficient way.  
 
 ```python
@@ -42,14 +42,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-## 2. Load the dataset
+## Load the dataset
 The data can be loaded from a CSV file that you can see in this [link](https://github.com/Katylub/Iris-Dataset-/blob/master/IrisDataset.csv): 
 
 ```python
 f = pd.read_csv('IrisDataset.csv')
 ```
 
-## 3. Check Dimension Dataset
+## Check Dimension Dataset
 As mentioned, the dataset contains a set of 150 records under five attributes
 
 ```python
@@ -59,7 +59,7 @@ print("The shape of dataset is:", (f.shape))
 ![Shape Data set](https://github.com/Katylub/Iris-Dataset-/blob/master/Shape%20of%20dataset.JPG)
 
 
-## 4. Evaluate the data
+## Evaluate the data
 We can see how the attributes are presented by petal length, petal width, sepal length, sepal width and species.
 
 ```python
@@ -69,7 +69,7 @@ print (f.head())
  ![We can see each column looks like this:](https://github.com/Katylub/Iris-Dataset-/blob/master/Dataset%20Columns.JPG)
 
 
-## 5. Summary of each attribute 
+## Summary of each attribute 
 We can see the count, min, max, standard and percentiles. Also that all the values has a similar range between 0 and 8.
 
 ```python
@@ -78,7 +78,7 @@ print (f.describe())
 
 ![Attribute Summary](https://github.com/Katylub/Iris-Dataset-/blob/master/Attribute%20Summary.JPG)
 
-## 6. Species Distribution
+## Species Distribution
 We can see that each specie has the same number of instances (50 or 33% of the dataset) and all of them integer.
 
 ```python
@@ -97,8 +97,8 @@ plt.show()
 
 ![Plot Individual Variable](https://github.com/Katylub/Iris-Dataset-/blob/master/Plot%20Individual%20variable.png)
 
-## 7. Histogram of each individual variable
-Graphical distribution attibutes
+## Histogram of each individual variable
+Graphical distribution of attributes
 
 ```python
 f.hist()
@@ -107,7 +107,7 @@ plt.show()
 
 ![Histogram](https://github.com/Katylub/Iris-Dataset-/blob/master/Histogram.png)
 
-## 8. Boxplot
+## Boxplot
 We can compare distribution of the attributes by species 
 
 ```python
@@ -117,7 +117,7 @@ plt.show()
 
 ![Boxplot](https://github.com/Katylub/Iris-Dataset-/blob/master/Boxplot%20by%20species.png)
 
-## 9. Scatter Matrix
+## Scatter Matrix
 We can look at the interactions between the variables
 
 ```python
@@ -127,20 +127,77 @@ plt.show()
 
 ![Scatter](https://github.com/Katylub/Iris-Dataset-/blob/master/Scatter%20matrix.png)
 
+## Violinplot 
+Visual representation of distribution of data and density
+
+```python
+sns.violinplot(data=df,x='Species',y='PetalLengthCm')
+plt.show()
+```
+
+![Violinplot](https://github.com/Katylub/Iris-Dataset-/blob/master/Violinplot.png)
+
+
+## Pairplot
+Interaction between attibutes by species across multiple dimensions
+
+```python
+sns.pairplot(df,hue="Species")
+plt.show()
+```
+
+![Pairplot](https://github.com/Katylub/Iris-Dataset-/blob/master/Pairplot.png)
+
+
+## Machine Learning - Scikit
+Machine learning is about learning some properties of a data set and then testing those properties against another data set. A common practice in machine learning is to evaluate an algorithm by splitting a data set into two. We call one of those sets the training set, on which we learn some properties; we call the other set the testing set, on which we test the learned properties.
+
+**Scikit** is a open source tool for data mining and data analysis built in Numpy, Scipy and Matplotlib and comes with the Iris dataset.
+
+## Superviced Learning
+In Supervised Learning, we have a dataset consisting of both features and labels. The task is to construct an estimator which is able to predict the label of an object given the set of features. A relatively simple example is predicting the species of iris given a set of measurements of its flower. 
+
+K nearest neighbors (kNN) is one of the simplest learning strategies: given a new, unknown observation, look up in your reference database which ones have the closest features and assign the predominant class. As example see belos one iris classification problem that output the specie.
+
+```python
+from sklearn import neighbors, datasets
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+knn = neighbors.KNeighborsClassifier(n_neighbors=1)
+knn.fit(X, y)
+# What kind of iris has 3cm x 5cm sepal and 4cm x 2cm petal?
+print(iris.target_names[knn.predict([[3, 5, 4, 2]])])
+```
+
+In this case the output will be Virginica
+
+## Plot 2D views of the iris dataset
+we can visualize two of the dimensions at a time using a scatter plot, in this case we can visualize that Iris Setosa flower is easier to separate from Versicolor and Virginica
+
+```python
+from sklearn import neighbors, datasets
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+knn = neighbors.KNeighborsClassifier(n_neighbors=1)
+knn.fit(X, y)
+# What kind of iris has 3cm x 5cm sepal and 4cm x 2cm petal?
+print(iris.target_names[knn.predict([[3, 5, 4, 2]])])
+```
+![Plot 2D](https://github.com/Katylub/Iris-Dataset-/blob/master/Plot%202D.png)
+
 
 ## References:
 
+http://www.popflock.com/learn?s=Ronald_Fisher
+https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
 https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 https://www.kaggle.com/gopaltirupur/iris-data-analysis-and-machine-learning-python
-
-
-About Ronald Fisher:
-http://www.popflock.com/learn?s=Ronald_Fisher
-
-About Iris Dataset
-https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
 https://en.wikipedia.org/wiki/Iris_flower_data_set
 https://study.com/academy/lesson/sir-ronald-fisher-biography-contributions-to-statistics.html
 https://archive.ics.uci.edu/ml/datasets/iris
 https://datahub.io/machine-learning/iris#readme
 https://matematics.wordpress.com/2018/05/23/sir-ronald-aylmer-fisher/
+https://scikit-learn.org/stable/tutorial/basic/tutorial.html#loading-an-example-dataset
+https://medium.com/@jebaseelanravi96/machine-learning-iris-classification-33aa18a4a983
+http://scipy-lectures.org/packages/scikit-learn/index.html
+
