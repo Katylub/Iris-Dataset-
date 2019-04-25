@@ -26,7 +26,7 @@ For each example were measured four features:
  
 ## Based on the combination of these four features and the species Fisher developed a linear discriminant model to distinguish the species from each other. ##
 
-![Image of Iris sepal and width](https://github.com/Katylub/Iris-Dataset-/blob/master/Others/Sepal%20and%20petal.png)
+![Image of Iris sepal and width](https://github.com/Katylub/Iris-Dataset-/blob/master/Sepal%20and%20petal.png)
 
 ## Iris Data Set: 
 
@@ -139,7 +139,7 @@ plt.show()
 
 
 ## Pairplot
-Interaction between attibutes by species across multiple dimensions
+Interaction between attributes by species across multiple dimensions
 
 ```python
 sns.pairplot(df,hue="Species")
@@ -176,21 +176,21 @@ Plot 2D views of the iris dataset
 ![Plot 2D](https://github.com/Katylub/Iris-Dataset-/blob/master/Plot%202D.png)
 
 ## Summary
-The Iris Dataset is the ideal dataset to start projects with data analysis and machine learning, in this project we identified all the attributes as numeric, so we sould work on how to load the data and the libraries we need to import. 
+The Iris Dataset is ideal to start projects with data analysis and machine learning. 
 
-The size of the document allow us to work with all the data and fit the information in the memory. We could observe the attibutes has the same scale and units, so the data doesn't require special transformation.
+During the analysis we can evaluate the size and dimension of the data, the way the data is presented, the distribution of each attribute and also see the maximum, minimum and percentiles of all the attributes. In the Iris dataset the size allow us to fit the information in the memory and as the data has the same scale and units, doesn't require special transformation. 
 
-The graphics demostrated that Iris Setosa flower is easier to separate from Versicolor and Virginica and we are allow to predict the type of flower with high level of accuracy. 
+Using the libraries we were able to create graphic representation of the data, compare attributes, create histograms, visualise the data in multiple dimension, etc. In the Iris datase the scatter graphics demostrated that Iris Setosa flower is easier to separate from Versicolor and Virginica and with machine learning it is possible to predict the type of flower with high level of accuracy. 
 
-Above all we could see the different information we can gatter from data to understand it and predict information based in what we gather.
+With Iris dataset we understand how to analyse data and predict information.
 
 ## References:
 
 http://www.popflock.com/learn?s=Ronald_Fisher
-https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
+https://en.wikipedia.org/wiki/Iris_flower_data_set
+https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342has the same scale and 
 https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
 https://www.kaggle.com/gopaltirupur/iris-data-analysis-and-machine-learning-python
-https://en.wikipedia.org/wiki/Iris_flower_data_set
 https://study.com/academy/lesson/sir-ronald-fisher-biography-contributions-to-statistics.html
 https://archive.ics.uci.edu/ml/datasets/iris
 https://datahub.io/machine-learning/iris#readme
